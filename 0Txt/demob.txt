@@ -1,0 +1,184 @@
+load bg office BG_CS_PR_03.jpg
+load bgm main Theme_135.ogg
+load bgm emo Theme_55.ogg
+load spr 日奈 hina_spr
+load sprC 日鞠 CH0159_spr
+load sprC 艾米 eimi_spr
+load bg window BG_CS_PR_16.jpg
+load se ring SE_Ring_01.wav
+load se pick SE_Confirm_01.wav
+load se wear SE_Gear_02.wav
+load se doorhit SFX_Common_Hit_Mech_Long_01.wav
+load end
+load bg darkdorm BG_StudentRoom_Night.jpg
+load bg lightdorm BG_StudentRoom_Night2.jpg
+load spr 日奈（睡衣) NP0009_spr
+load se 。。。 SE_Cartoon_02.wav
+load bgm last Theme_01.ogg
+load end
+load bgm mid Theme_87.ogg
+load end
+bg set office
+bgm set main
+bgm v 1
+bgm loop
+banner2 `Chapter 0` `开端`
+日奈 show
+日奈 state 05
+t `日奈` `风纪委员会` `老师，你在说什么？`
+日奈 state 06
+日奈 shakeY 5 1.5 1
+t `日奈` `风纪委员会` `一定，有什么原因才对！`
+button `日奈。。。但这就是我的决定。` `tstamp1caseA0`
+target tstamp1caseA0
+wait 1
+button `我，已经不能和日奈继续走下去了。` `tstamp2caseA1`
+target tstamp2caseA1
+wait 1
+日奈 shakeX 15 1 6
+t `日奈` `风纪委员会` `好吧……我尊重老师，尊重您作为大人的决定。`
+button `离开吧，这里已经没有你能做的事了` `tstamp3caseA2`
+target tstamp3caseA2
+wait 1
+日奈 state 15
+日奈 shakeX 15 1 6
+日奈 state 12
+t `日奈` `风纪委员会` `如果您有朝一日想要卸下身上的负担，风纪委员会，还一直欢迎您。`
+日奈 shakeY 2.5 -2.5 1
+日奈 hide
+bgm stop
+bg hide
+wait 1
+bg change window
+bg show
+se set ring
+se v 1
+se once
+se set ring
+se pause
+se v 1
+se once
+se set ring
+se v 1
+se once
+se set ring
+se v 1
+se once
+bg change office
+button `接电话` `tstamp4caseA3`
+target tstamp4caseA3
+wait 1
+se set pick
+se v 1
+se once
+日鞠 show
+日鞠 state 11
+bgm set emo
+bgm v 1
+bgm loop
+t `日鞠` `真理部` `老师，手术准备好了。`
+t `日鞠` `真理部` `我。。我再次恳求您，您没必要救那个孩子的。`
+t `日鞠` `真理部` `搭上自己的性命！`
+button `这件事没有向千年学园之外的人提起，谢谢你，日鞠` `tstamp5caseA4` `我会按照约定，半个小时后到手术室。` `tstamp5caseB4`
+target tstamp5caseA4
+wait 1
+jump tstamp5IfFinal4
+target tstamp5caseB4
+jump tstamp5IfFinal4
+target tstamp5IfFinal4
+日鞠 state 00
+wait 1
+日鞠 state S2_11
+t `日鞠` `真理部` `我。。。`
+t `日鞠` `真理部` `我知道了。`
+日鞠 moveX -5 10
+t `日鞠` `真理部` `艾米，通知麻醉组，手术按计划进行。`
+艾米 show
+艾米 moveX 5 10
+艾米 state 06
+t `艾米` `真理部` `我。。。我知道了。。但是老师！`
+button `挂电话` `tstamp6caseA5`
+target tstamp6caseA5
+wait 1
+艾米 hideD
+日鞠 hideD
+button `抱歉，想要拯救她，这是唯一的方法了。` `tstamp7caseA6`
+target tstamp7caseA6
+wait 1
+se set wear
+se v 1
+se once
+button `出发吧` `tstamp8caseA7`
+target tstamp8caseA7
+wait 1
+bgm stop
+日奈 show
+se set doorhit
+se v 1
+se once
+日奈 state 20
+日奈 shakeX 20 2 6
+bgm set mid
+bgm v 1
+bgm loop
+t `日奈` `风纪委员会` `老师！你要做什么！`
+button `什。。！日奈，你一直在门后吗？` `tstamp9caseA8`
+target tstamp9caseA8
+wait 1
+日奈 shakeY 2.5 -2.5 1
+t `日奈` `风纪委员会` `请现在就给我解释清楚，不然您今天是走不出办公室的门的。`
+button `……` `tstamp10caseA9` `（话到嘴边却说不出口）` `tstamp10caseB9`
+target tstamp10caseA9
+wait 1
+jump tstamp10IfFinal9
+target tstamp10caseB9
+jump tstamp10IfFinal9
+target tstamp10IfFinal9
+日奈 shakeX 20 2 6
+t `日奈` `风纪委员会` `老师！说点什么啊！`
+日奈 state 09
+t `日奈` `风纪委员会` `老师！！！`
+日奈 hideD
+bg hide
+wait 1
+bg change darkdorm
+bg showD
+bgm stop
+日奈（睡衣) show
+日奈（睡衣) state 06
+se set wear
+se v 1
+se once
+t `日奈（睡衣)` `风纪委员会` `老师！！！`
+se set 。。。
+se v 1
+se once
+wait 0.5
+se set 。。。
+se v 1
+se once
+wait 0.5
+se set 。。。
+se v 1
+se once
+bg change lightdorm
+日奈（睡衣) shakeY 2.5 -2.5 1
+日奈（睡衣) state 04
+t `日奈（睡衣)` `风纪委员会` `啊。。原来是恶梦吗。`
+t `日奈（睡衣)` `风纪委员会` `真是的，最近经常看到相关题材的二创，害得我觉都睡不着。`
+wait 1
+日奈（睡衣) state 99
+t `日奈（睡衣)` `风纪委员会` `老师现在，在好好休息吗……？`
+t `日奈（睡衣)` `风纪委员会` `要是又通宵批改文件可不行，都说过多少次了。`
+日奈（睡衣) state 00
+t `日奈（睡衣)` `风纪委员会` `作为老师的女友，要对他的健康负起责任呢。`
+日奈（睡衣) state 99
+日奈（睡衣) shakeY 2.5 -2.5 1
+bg change darkdorm
+t `日奈（睡衣)` `风纪委员会` `明天一大早就前往夏莱吧。`
+日奈（睡衣) hideD
+bgm set last
+bgm v 1
+bgm once
+bg hide
+end finish `开端 完`
